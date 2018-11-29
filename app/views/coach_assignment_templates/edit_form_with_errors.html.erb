@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @coach_assignment.errors.any? %>
+  <% @coach_assignment.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit coach assignment #<%= @coach_assignment.id %>
+</h1>
+
+<hr>
+
+<!-- Form coach_assignment start -->
+<form action="/update_coach_assignment/<%= @coach_assignment.id %>" method="post">
+<!-- Form coach_assignment end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @coach_assignment.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for improvement_id start -->
+  <div class="form-group">
+    <label for="improvement_id">
+      Improvement
+    </label>
+
+    <!-- Input for improvement_id start -->
+    <input type="text" id="improvement_id" name="improvement_id" class="form-control" value="<%= @coach_assignment.improvement_id %>">
+    <!-- Input for improvement_id end -->
+  </div>
+  <!-- Label and input for improvement_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update coach assignment
+  </button>
+</form>
+
+<hr>
+
+<a href="/coach_assignments">
+  Go back
+</a>

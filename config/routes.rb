@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Coach assignment resource:
+
+  # CREATE
+  get("/coach_assignments/new", { :controller => "coach_assignments", :action => "new_form" })
+  post("/create_coach_assignment", { :controller => "coach_assignments", :action => "create_row" })
+
+  # READ
+  get("/coach_assignments", { :controller => "coach_assignments", :action => "index" })
+  get("/coach_assignments/:id_to_display", { :controller => "coach_assignments", :action => "show" })
+
+  # UPDATE
+  get("/coach_assignments/:prefill_with_id/edit", { :controller => "coach_assignments", :action => "edit_form" })
+  post("/update_coach_assignment/:id_to_modify", { :controller => "coach_assignments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_coach_assignment/:id_to_remove", { :controller => "coach_assignments", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Action step resource:
 
   # CREATE

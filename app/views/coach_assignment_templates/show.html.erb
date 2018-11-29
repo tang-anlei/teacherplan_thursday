@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Coach assignment #<%= @coach_assignment.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/coach_assignments" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link coach_assignment start -->
+      <div class="col">
+        <a href="/coach_assignments/<%= @coach_assignment.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit coach assignment
+        </a>
+      </div>
+      <!-- Edit link coach_assignment end -->
+
+      <!-- Delete link coach_assignment start -->
+      <div class="col">
+        <a href="/delete_coach_assignment/<%= @coach_assignment.id %>" class="btn btn-block btn-outline-secondary">
+          Delete coach assignment
+        </a>
+      </div>
+      <!-- Delete link coach_assignment end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @coach_assignment.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Improvement
+      </dt>
+      <!-- Display improvement_id start -->
+      <dd>
+        <%= @coach_assignment.improvement_id %>
+      </dd>
+      <!-- Display improvement_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@coach_assignment.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@coach_assignment.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
