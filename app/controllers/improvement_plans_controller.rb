@@ -46,7 +46,7 @@ class ImprovementPlansController < ApplicationController
     @improvement_plan = ImprovementPlan.find(params.fetch("id_to_modify"))
 
     @improvement_plan.state = params.fetch("state")
-    @improvement_plan.user_id = params.fetch("user_id")
+    
     @improvement_plan.comments = params.fetch("comments")
     @improvement_plan.coach_id = params.fetch("coach_id")
 
