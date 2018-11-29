@@ -53,6 +53,22 @@ class CoachAssignmentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @coach_assignment = CoachAssignment.find(params.fetch("id_to_remove"))
+
+    @coach_assignment.destroy
+
+    redirect_to("/users/#{@coach_assignment.user_id}", notice: "CoachAssignment deleted successfully.")
+  end
+
+  def destroy_row_from_improvement
+    @coach_assignment = CoachAssignment.find(params.fetch("id_to_remove"))
+
+    @coach_assignment.destroy
+
+    redirect_to("/improvement_plans/#{@coach_assignment.improvement_id}", notice: "CoachAssignment deleted successfully.")
+  end
+
   def destroy_row
     @coach_assignment = CoachAssignment.find(params.fetch("id_to_remove"))
 

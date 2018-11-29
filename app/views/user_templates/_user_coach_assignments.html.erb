@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Coach Assignments
+
+    <a data-toggle="collapse" href="#user_coach_assignments_new_form">
+      Add coach assignment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.coach_assignments.each do |coach_assignment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/coach_assignments/<%= coach_assignment.id %>">
+          <%= coach_assignment.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
