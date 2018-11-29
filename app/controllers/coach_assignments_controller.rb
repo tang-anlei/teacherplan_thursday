@@ -1,6 +1,7 @@
 class CoachAssignmentsController < ApplicationController
   def index
-    @coach_assignments = CoachAssignment.page(params[:page]).per(10)
+    @q = CoachAssignment.ransack(params[:q])
+    @coach_assignments = @q.result(:distinct => true).includes(:user, :improvement).page(params[:page]).per(10)
 
     render("coach_assignment_templates/index.html.erb")
   end
