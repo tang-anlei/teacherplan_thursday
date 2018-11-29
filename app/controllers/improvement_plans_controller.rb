@@ -6,6 +6,8 @@ class ImprovementPlansController < ApplicationController
   end
 
   def show
+    @coach_assignment = CoachAssignment.new
+    @goal = Goal.new
     @improvement_plan = ImprovementPlan.find(params.fetch("id_to_display"))
 
     render("improvement_plan_templates/show.html.erb")

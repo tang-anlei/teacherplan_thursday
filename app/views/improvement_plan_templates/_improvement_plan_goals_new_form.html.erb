@@ -1,0 +1,25 @@
+<!-- Form goal start -->
+<form action="/create_goal_from_improvement_plan" method="post">
+<!-- Form goal end -->
+
+  <!-- Label and input for improvement_plan_id start -->
+  <!-- Input for improvement_plan_id start -->
+  <input type="hidden" name="improvement_plan_id" value="<%= @improvement_plan.id %>">
+  <!-- Input for improvement_plan_id end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <textarea id="comments" name="comments" class="form-control" rows="3"><%= @goal.comments %></textarea>
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create goal
+  </button>
+</form>

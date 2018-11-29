@@ -1,0 +1,25 @@
+<!-- Form coach_assignment start -->
+<form action="/create_coach_assignment_from_improvement_plan" method="post">
+<!-- Form coach_assignment end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @coach_assignment.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for improvement_id start -->
+  <!-- Input for improvement_id start -->
+  <input type="hidden" name="improvement_id" value="<%= @improvement_plan.id %>">
+  <!-- Input for improvement_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create coach assignment
+  </button>
+</form>

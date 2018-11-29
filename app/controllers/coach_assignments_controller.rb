@@ -32,6 +32,21 @@ class CoachAssignmentsController < ApplicationController
     end
   end
 
+  def create_row_from_improvement_plan
+    @coach_assignment = CoachAssignment.new
+
+    @coach_assignment.user_id = params.fetch("user_id")
+    @coach_assignment.improvement_id = params.fetch("improvement_id")
+
+    if @coach_assignment.valid?
+      @coach_assignment.save
+
+      redirect_to("/improvement_plans/#{@coach_assignment.improvement_id}", notice: "CoachAssignment created successfully.")
+    else
+      render("coach_assignment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @coach_assignment = CoachAssignment.find(params.fetch("prefill_with_id"))
 
