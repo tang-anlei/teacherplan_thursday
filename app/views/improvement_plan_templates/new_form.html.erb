@@ -1,0 +1,69 @@
+<h1>
+  Add a new improvement plan
+</h1>
+
+
+<hr>
+
+<!-- Form improvement_plan start -->
+<form action="/create_improvement_plan" method="post">
+<!-- Form improvement_plan end -->
+
+  <!-- Label and input for state start -->
+  <div class="form-group">
+    <label for="state">
+      State
+    </label>
+
+    <!-- Input for state start -->
+    <input type="text" id="state" name="state" class="form-control">
+    <!-- Input for state end -->
+  </div>
+  <!-- Label and input for state end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <textarea id="comments" name="comments" class="form-control" rows="3"></textarea>
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <!-- Label and input for coach_id start -->
+  <div class="form-group">
+    <label for="coach_id">
+      Coach
+    </label>
+
+    <!-- Input for coach_id start -->
+    <input type="text" id="coach_id" name="coach_id" class="form-control">
+    <!-- Input for coach_id end -->
+  </div>
+  <!-- Label and input for coach_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create improvement plan
+  </button>
+</form>
+
+<hr>
+
+<a href="/improvement_plans">
+  Go back
+</a>
