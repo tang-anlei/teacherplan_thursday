@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @coach_assignment.user_id %>
+        <% if @coach_assignment.user.present? %>
+          <a href="/users/<%= @coach_assignment.user_id %>">
+            <%= @coach_assignment.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display improvement_id start -->
       <dd>
-        <%= @coach_assignment.improvement_id %>
+        <% if @coach_assignment.improvement.present? %>
+          <a href="/improvement_plans/<%= @coach_assignment.improvement_id %>">
+            <%= @coach_assignment.improvement.state %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display improvement_id end -->
 

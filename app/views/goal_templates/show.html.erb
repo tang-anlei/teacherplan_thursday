@@ -34,7 +34,11 @@
       </dt>
       <!-- Display improvement_plan_id start -->
       <dd>
-        <%= @goal.improvement_plan_id %>
+        <% if @goal.improvement_plan.present? %>
+          <a href="/improvement_plans/<%= @goal.improvement_plan_id %>">
+            <%= @goal.improvement_plan.state %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display improvement_plan_id end -->
 

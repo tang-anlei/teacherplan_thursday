@@ -58,13 +58,21 @@
 
         <!-- Display coach_assignment.user_id start -->
         <td>
-          <%= coach_assignment.user.email %>
+          <% if coach_assignment.user.present? %>
+            <a href="/users/<%= coach_assignment.user.id %>">
+              <%= coach_assignment.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display coach_assignment.user_id end -->
 
         <!-- Display coach_assignment.improvement_id start -->
         <td>
-          <%= coach_assignment.improvement.state %>
+          <% if coach_assignment.improvement.present? %>
+            <a href="/improvement_plans/<%= coach_assignment.improvement.id %>">
+              <%= coach_assignment.improvement.state %>
+            </a>
+          <% end %>
         </td>
         <!-- Display coach_assignment.improvement_id end -->
 

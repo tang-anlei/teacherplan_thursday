@@ -72,7 +72,11 @@
 
         <!-- Display improvement_plan.user_id start -->
         <td>
-          <%= improvement_plan.user.email %>
+          <% if improvement_plan.user.present? %>
+            <a href="/users/<%= improvement_plan.user.id %>">
+              <%= improvement_plan.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display improvement_plan.user_id end -->
 
