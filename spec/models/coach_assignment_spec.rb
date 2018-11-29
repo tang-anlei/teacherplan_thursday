@@ -4,6 +4,8 @@ RSpec.describe CoachAssignment, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:improvement) }
+
     it { should belong_to(:user) }
 
     end
