@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form goal start -->
 <form action="/create_goal" method="post">
-<!-- Form goal end -->
 
-  <!-- Label and input for improvement_plan_id start -->
   <div class="form-group">
     <label for="improvement_plan_id">
       Improvement plan
     </label>
 
-    <!-- Input for improvement_plan_id start -->
     <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :state, @goal.improvement_plan_id), :class => "form-control") %>
-    <!-- Input for improvement_plan_id end -->
   </div>
-  <!-- Label and input for improvement_plan_id end -->
 
-  <!-- Label and input for comments start -->
   <div class="form-group">
     <label for="comments">
       Comments
     </label>
 
-    <!-- Input for comments start -->
     <textarea id="comments" name="comments" class="form-control" rows="3"></textarea>
-    <!-- Input for comments end -->
   </div>
-  <!-- Label and input for comments end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create goal
