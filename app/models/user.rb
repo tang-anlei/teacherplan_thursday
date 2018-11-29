@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :coaching_assignments,
+             :through => :coach_assignments,
+             :source => :improvement
+
   # Validations
 
   # Include default devise modules. Others available are:
