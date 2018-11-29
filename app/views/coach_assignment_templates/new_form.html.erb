@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for improvement_id start -->
-    <input type="text" id="improvement_id" name="improvement_id" class="form-control">
+    <%= select_tag(:improvement_id, options_from_collection_for_select(ImprovementPlan.all, :id, :state, @coach_assignment.improvement_id), :class => "form-control") %>
     <!-- Input for improvement_id end -->
   </div>
   <!-- Label and input for improvement_id end -->
